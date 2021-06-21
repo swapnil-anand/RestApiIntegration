@@ -10,7 +10,7 @@ export class RequestsService {
   private AllAccountUrl = "http://localhost:8080/accounts/all";
   private AddAccountUrl = "http://localhost:8080/accounts/add";
   private DeleteAccountUrl = "http://localhost:8080/accounts/delete/";
-
+  private deleteresponse:any;
 
 
   constructor(private http:HttpClient){}
@@ -22,7 +22,11 @@ export class RequestsService {
     alert("SAVED");
   }
   Delete(data:BigInteger){
-    this.http.delete(this.DeleteAccountUrl + data).subscribe();
-    alert("DELETE");
+    this.http.delete(this.DeleteAccountUrl + data).subscribe(
+      response => {
+        this.deleteresponse = response;
+      }
+    );
+    console.warn(this.deleteresponse);
   }
 }
