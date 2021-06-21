@@ -1,0 +1,49 @@
+body{
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("./Images/Back.jpg");
+  background-size: cover;
+  width: auto;
+  height: 1000px;
+  color: white;
+  overflow-x: hidden;
+  padding: 20px;
+  margin: -1%;
+  text-align: center;
+}
+.Form{
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.GetTable{
+  margin: 2% 40%;
+}
+.btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 2%;
+}
+
+.btn:hover{
+  transition: background-color 0.5s ease;
+  background-color: #306d32;
+}
+
+.btn-submit{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 8px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 2%;
+}
+.btn-submit:hover{
+  transition: background-color 0.5s ease;
+  background-color: #306d32;
+}

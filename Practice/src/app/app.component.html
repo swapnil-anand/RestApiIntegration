@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h1>REST API MYSQL</h1>
+    </header>
+    <button (click)="getResponse()" class = "btn">STORE DATA LOCALLY</button><br><br>
+    <div *ngIf="isShowGet"  class = "GetTable">
+      <table>
+        <tr>
+          <td>Id</td>
+          <td>Account Number</td>
+          <td>Name</td>
+          <td>Type</td>
+          <td>Balance</td>
+        </tr>
+        <tr *ngFor="let account of accounts">
+          <td>{{ account.id }}</td>
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.accountHolder }}</td>
+          <td>{{ account.accountType }}</td>
+          <td>{{ account.currentBalance }}</td>
+        </tr>
+      </table>
+    </div>
+    <button (click)="setShowForm()" class = "btn">VIEW FORM</button><br><br>
+    <div *ngIf="isShowForm">
+      <form class="Form" #UserForm="ngForm" (ngSubmit)="setResponse(UserForm.value)">
+        <label>Account Number:  </label>
+        <input type="number" name="accountNumber" ngModel placeholder="123456" required><br><br>
+        <label>Account Holder:  </label>
+        <input type="text" name="accountHolder" ngModel placeholder="name" required><br><br>
+        <label>Type: </label>
+        <input type="text" name="accountType" ngModel placeholder="Savings/Current" required><br><br>
+        <label>Balance: </label>
+        <input type="number" name="currentBalance" ngModel placeholder="Balance" required><br><br>
+        <button class = "btn-submit">Add Data</button>
+      </form>
+    </div>
+    <button (click)="setShowDelete()" class = "btn">DELETE</button><br><br>
+    <div *ngIf="isShowDelete">
+      <form class = "Form" #UserDelete="ngForm" (ngSubmit)="DeleteResponse(UserDelete.value)">
+        <label>ID: </label>
+        <input type="number" name="accountId" ngModel placeholder="0"><br><br>
+        <button class="btn-submit">Delete</button>
+      </form>
+    </div>
+  </body>
+</html>
